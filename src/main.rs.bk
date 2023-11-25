@@ -1,0 +1,10 @@
+
+
+
+
+use TaskVigil::structs::utils::*;
+
+fn main() {
+    let _ = write_dummy_project("TaskVigil", Vec::new());
+    println!("{:#?}", read_all_projects());
+}
