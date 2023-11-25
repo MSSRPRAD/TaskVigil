@@ -8,23 +8,24 @@ const PROJECTS_DIR: &str = ".taskvigil/projects";
 
 /// Enum representing different types for a task.
 #[derive(Debug, Deserialize, Serialize)]
-enum Type {
+pub enum Type {
     Urgent,
     TimePass,
     Casual,
     TimeWaste,
     Recreation,
+    Misc
 }
 
 /// Represents a session within a task.
 #[derive(Debug, Deserialize, Serialize)]
 pub struct Session {
     /// The start time of the session.
-    start_time: String,
+    pub start_time: String,
     /// The end time of the session.
-    end_time: String,
+    pub end_time: Option<String>,
     /// Optional state changes during the session.
-    state_changes: Option<Vec<(Type, Type)>>,
+    pub state_changes: Option<Vec<(Type, Type)>>,
 }
 
 /// Represents a task within a project.
